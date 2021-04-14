@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+html, body {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #dddbff;
+  min-height: 100vh;
+}
+
+body {
+  background: url("../../images/bg-mobile.png") no-repeat;
+  background-size: cover;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  padding: 10vh 5vw;
+  max-width: 400px;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 5rem 2rem 2rem;
+  background: #1d2c67;
+  border-radius: 0 100px 0 0;
+}
+.dashboard .logo img {
+  height: auto;
+  width: 8rem;
+}
+.dashboard .links {
+  padding: 2rem 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+.dashboard .links a {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: #0c122c;
+}
+.dashboard .links img {
+  height: 1rem;
+  width: auto;
+}
+
+.info {
+  background-color: #1d2c67;
+  margin-top: 1rem;
+  padding: 2rem;
+  border-radius: 10px;
+  position: relative;
+}
+.info span {
+  display: flex;
+  padding: 1rem 0;
+}
+.info .warning {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 10px;
+  background-color: white;
+  color: #0c122c;
+  height: 3rem;
+  width: 15rem;
+}
+.info .warning h2 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+.info .warning .warning-text {
+  font-size: 1rem;
+  padding: 0;
+  color: #848794;
+  display: inline;
+}
+
+/*# sourceMappingURL=styles.css.map */
