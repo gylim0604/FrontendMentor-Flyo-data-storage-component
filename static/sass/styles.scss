@@ -167,6 +167,14 @@ main{
             padding-top: .5rem;
             padding-bottom: .5rem;            
         }
+        .progress-bar{
+            .bar{
+                .indicator{
+                    left: 78%;
+                }
+            }
+        }
+
         .warning{
             top: -25%;
             left: inherit;

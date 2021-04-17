@@ -156,6 +156,9 @@ main {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
   }
+  .info .progress-bar .bar .indicator {
+    left: 78%;
+  }
   .info .warning {
     top: -25%;
     left: inherit;
