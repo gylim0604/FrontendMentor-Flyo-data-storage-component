@@ -4,7 +4,9 @@ $pale-blue: hsl(243, 100%, 93%);
 $gray-blue: hsl(229, 7%, 55%);
 $dark-blue: hsl(228, 56%, 26%);
 $very-dark-blue: rgb(12, 18, 44);
-// $bar-gradient: ;
+$bar-gradient: linear-gradient(to right, hsl(6, 100%, 80%),hsl(335, 100%, 65%)) ;
+$breakpoint-tablet: 1024px;
+
 html,body{
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
@@ -18,7 +20,6 @@ body{
     background-size: cover;
     margin: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -31,7 +32,7 @@ main{
 .dashboard{
     display: flex;
     flex-direction: column;
-    padding: 2rem 5rem 2rem 2rem;
+    padding: 2rem;
     background: $dark-blue;
     border-radius: 0 100px 0 0;
 
@@ -44,11 +45,12 @@ main{
 
     .links{
         padding: 2rem 0 0;
+        width: 80%;
         display: flex;
         justify-content: space-between;
         a{
-            height: 2.5rem;
-            width: 2.5rem;
+            height: 3.5rem;
+            width: 3.5rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -56,7 +58,7 @@ main{
             background-color: $very-dark-blue;
         }
         img{
-            height: 1rem;
+            height: 1.5rem;
             width: auto;
         }
     }
@@ -72,18 +74,59 @@ main{
         display: flex;
         padding: 1rem 0;
     }
+    .progress-bar{
+        flex-direction: column;
+        span{
+            width: 100%;
+            padding: 0;
+            font-weight: 700;
+        }
+    
+        .bar{
+            background-color: $very-dark-blue;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            height: 1rem;
+            padding: 0;
+            .indicator{
+                background-color: white;
+                position: absolute;
+                width: .7rem;
+                height: 70%;
+                top: 16%;
+                left: 76%;
+                z-index: 1;
+                border-radius: 50%;
+                padding: 0;
+            }
+        }
+        .bar::after{
+            content: "";
+            background: $bar-gradient;
+            width: 80%;
+            height: 80%;
+            border-radius: 20px;
+            top: 11%;
+            left: 1%;
+            position: absolute;
+        }
+        span:nth-child(2){
+            justify-content: space-between;
+        }
+    }
     .warning{
         position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
-
+        left: 22%;
         border-radius: 10px;
         background-color: white;
         color: $very-dark-blue;
         height: 3rem;
-        width: 15rem;
+        width: 12rem;
         
         h2{
             font-size: 2.5rem;
@@ -99,3 +142,47 @@ main{
 
 }
 
+@media only screen and (min-width: $breakpoint-tablet){
+    body{
+        background: $very-dark-blue no-repeat ;
+        background-image: url("../../images/bg-desktop.png") ;
+        background-position: bottom;
+        background-size: 100vw 50vh;
+    }
+    main{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        max-width: 1440px;
+    }
+    .dashboard{
+        width: 35ch;
+        margin-right: 2rem;
+    }
+    .info{
+        width: 60ch;
+        height: 50%;
+        padding: 2rem 2rem 1rem;
+        span{
+            padding-top: .5rem;
+            padding-bottom: .5rem;            
+        }
+        .warning{
+            top: -25%;
+            left: inherit;
+            right: 5%;
+            border-radius: 10px 10px 0 10px;
+        }
+
+        #triangle-topright {
+            position: absolute;
+            right: 0;
+            bottom: -2rem;
+            width: 0;
+            height: 0;
+            border-top: 1.5rem solid #ffff;
+            border-left: 1.5rem solid transparent;
+          }
+        
+    }
+}
